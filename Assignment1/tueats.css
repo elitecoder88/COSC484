@@ -1,0 +1,40 @@
+table {
+    width: 75%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #808080;
+}
+
+th {
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+h1 {
+    color: #FFBB00;
+}
+
+.image {
+    width: 700px;
+    height: 200px;
+    background-image: url(tulogo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    /*Source to Towson logo image: https://www.towson.edu/brand/visual-guidelines/brand-marks/university.html */
+}
+
+table caption a:hover {
+    color: #FFBB00
+}
