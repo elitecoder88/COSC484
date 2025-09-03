@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.article {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+#tile-comment-author {
+  margin-left: 30px;
+  position: relative;
+}
+
+#author {
+  margin-top: 0px
+}
+
+#author-image, #author {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+}
+
+#author {
+  bottom: -23px !important;
+}
+
+#comment {
+  bottom: -2%;
+  left: 104px;
+  position: absolute;
+}
+
