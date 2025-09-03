@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hello:<span id="result"></span></h1>
+<ul>
+    <h2><li>Username: <span id="value1"></span></li></h2>
+    <h2><li>Email: <span id="value2"></span></li></h2>
+    <h2><li>Code: <span id="value3"></span></li></h2>
+    <h2><li>Password: <span id="value4"></span></li></h2>
+    <h2><li>Password Verify: <span id="value5"></span></li></h2>
+    <h2><li>Checkbox: <span id="value6"></span></li></h2>
+
+
+</ul>
+<script>
+    document.getElementById("value1").innerHTML=localStorage.getItem("info1");
+    document.getElementById("value2").innerHTML=localStorage.getItem("info2");
+    if (innerHTML=localStorage.getItem("info3") != "") {
+    document.getElementById("value3").innerHTML=localStorage.getItem("info3") + " (free meal)";
+    } else {
+        document.getElementById("value3").innerHTML=localStorage.getItem("info3") + "No referral code entered";
+    }
+    document.getElementById("value4").innerHTML=localStorage.getItem("info4");
+    document.getElementById("value5").innerHTML=localStorage.getItem("info5");
+    document.getElementById("value6").innerHTML=localStorage.getItem("info6");
+</script>
+</body>
+</html>

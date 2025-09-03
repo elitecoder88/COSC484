@@ -1,0 +1,119 @@
+<!--Christopher Biekeu-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel ="stylesheet" href="tueats.css">
+        <title>Assignment_2</title>
+        <meta charset="UTF-8">
+        <script>
+            function passwordCheck() {
+                var password1 = document.getElementById("pass").value;
+                var password2 = document.getElementById("verify-pass").value;
+                if (password1 != password2) {
+                    window.alert("Ensure passwords match.");
+                    return false;
+                }
+                return true;
+            }
+
+            function refCodeCheck() {
+                var rCode = document.getElementById("refcode").value.toLowerCase();
+                var invalidRefCode = ["tucis", "bogos", "eatgood"];
+                if (invalidRefCode.includes(rCode)) {
+                    window.alert("This referral code is invalid.");
+                    return false;
+                }
+                return true; 
+            }
+
+            function usernameCheck() {
+                var username = document.getElementById("uname").value;
+                if (username.length < 6) {
+                    window.alert("Username must be at least 6 characters long.");
+                    return false;
+                }
+                if (username.length > 24) {
+                    window.alert("Username must be at less 24 characters long");
+                    return false;
+                }
+                return true;
+            }
+
+            function pageInfo() {
+                var username = document.getElementById("uname").value;
+                var email = document.getElementById("email").value;
+                var referralcode = document.getElementById("refcode").value;
+                var password = document.getElementById("pass").value;
+                var verifypassword = document.getElementById("verify-pass").value;
+                var checkbox = document.getElementById("signUp").checked;
+
+                localStorage.setItem("info1",username);
+                localStorage.setItem("info2",email);
+                localStorage.setItem("info3",referralcode);
+                localStorage.setItem("info4",password);
+                localStorage.setItem("info5",verifypassword);
+                localStorage.setItem("info6",checkbox);
+                return false;
+            }
+
+        </script>
+    </head>
+    
+    <body>
+        <div class="image"> </div>
+        <h1>Welcome to TUEats</h1>
+        <form method="get" action="tueats_completed.html" onsubmit="return passwordCheck() && usernameCheck() && refCodeCheck();">
+            <fieldset>
+                <legend>Sign UP</legend>
+                <label for="uname">Username:</label>
+                <input type="text" id="uname" name="uname" required><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required><br><br>
+                <label for="refcode">Referral Code:</label>
+                <input type="text" id="refcode" name="refcode"><br><br>
+                <label for="pass">Password:</label> 
+                <input type="password" id="pass" name="passowrd" required><br><br>
+                <label for="verify-pass">Verify Password:</label> 
+                <input type="password" id="verify-pass" name="verify-pass" required><br><br>
+                <input type="checkbox" id="signUp" name="signUp">
+                <label for="signUp">Sign up for our newsletter?</label><br><br>
+                <input type="submit" id="submit_button" value="Submit" onclick="pageInfo();"> 
+            </fieldset>
+    
+            <fieldset>
+                <legend>Menu</legend>
+                <table>
+                    <caption> Menu is subject to change, please visit our main sie for more information.<a href="https://www.towson.edu/">Towson Website</a></caption>
+                    <thead>
+                        <tr id="row1">
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row2">
+                            <td>Item 1</td>
+                            <td>Burger</td>
+                            <td>$8</td>
+                            <td>550</td>
+                        </tr>
+                        <tr id="row3">
+                            <td>Item 2</td>
+                            <td>Mozzarella Sticks</td>
+                            <td>$7</td>
+                            <td rowspan="2">400</td>
+                        </tr>
+                        <tr id="row4">
+                            <td>Item 3</td>
+                            <td>Fries</td>
+                            <td>$4</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </fieldset>
+        </form>
+    </body>
+</html>
